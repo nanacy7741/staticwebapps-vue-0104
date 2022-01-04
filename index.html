@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>今日の天気は{{ weather }}で、気温は{{ temp }}度です。</p>
+        <button v-on:click="getData()">今日の東京の天気をAPIで取得！</button>
+
+        <p>
+            <a href="https://openweathermap.org/api">openweathermapから取得しています。</a>
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                weather: 'xxxx',
+                temp: 'yyyy'
+            },
+
+            methods: {
+                getData: async function(){
+                    const URL = `https://api.openweathermap.org/data/2.5/weather?id=1850147&units=metric&appid=ここにOpenWeathermapのAPIキーを指定`;
+                    const response = await axios.get(URL);
+                    this.weather = response.data.weather[0].main;
+                    this.temp = response.data.main.temp;
+                    // console.log(response.data);
+                },
+            },
+
+            // mounted: function(){
+
+            // }
+        })
+    </script>
+</body>
+</html>
