@@ -8,7 +8,7 @@
         "methods": [
           "get"
         ],
-        "route": "hoge"
+        "route": "api"
       },
       {
         "type": "http",
