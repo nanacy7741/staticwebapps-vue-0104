@@ -1,0 +1,19 @@
+{
+  "networking": {
+    "allowedIpRanges": [
+      "114.160.1.210/32"
+    ]
+  },
+  "routes": [
+    {
+      "route": "/hoge",
+      "redirect": "/api/hoge"
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/login",
+      "statusCode": 302
+    }
+  }
+}
