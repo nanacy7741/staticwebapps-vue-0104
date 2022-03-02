@@ -1,7 +1,7 @@
 {
   "networking": {
     "allowedIpRanges": [
-      "114.160.1.210/32"
+      "222.229.29.152/32"
     ]
   },
   "routes": [
